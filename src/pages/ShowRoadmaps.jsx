@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../components/Header";
+import './css_files/ShowRoadmaps.css';
 
 export default function ShowRoadmaps() {
   //   const [checkpoints, setCheckpoints] = React.useState([]); //state to store checkpoints
@@ -15,9 +16,9 @@ export default function ShowRoadmaps() {
   })
 
   return (
-    <>
+    <div className="show-rms-page app">
       <Header />
       {roadmaps}
-    </>
+    </div>
   );
 }
