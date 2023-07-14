@@ -35,10 +35,12 @@ header {
 
 .nav-links li a {
     transition: all 0.3s ease 0s;
+    color: #1D2A10;
+
 }
 
 .nav-links li a:hover {
-    color: #0088a9;
+    color: #4A6932;
 }
 
 .contactBtn {

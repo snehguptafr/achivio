@@ -8,8 +8,6 @@ export default function Header() {
             <nav>
                 <ul className='nav-links'>
                     <li><a href="#ABOUT">About</a></li>
-                    <li><a href="#">Log in</a></li>
-                    <li><a href="#">Sign up</a></li>
                 </ul>
             </nav>
             <a href="#CONTACTINFO"><button className='contactBtn'>Contact</button></a>
