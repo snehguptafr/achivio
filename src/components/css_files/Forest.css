@@ -11,12 +11,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 40vw;
-    max-height: 40vh;
+    width: 40vw;
+    height: 70vh;
     overflow: hidden;
     background-image: url('../images/smallG.png');
     background-size: cover;
-    padding: 50px;
+    /* padding: 50px; */
     border-radius: 25px;
     transition: transform 0.8s ease;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
@@ -48,4 +48,5 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
 }

@@ -16,11 +16,11 @@ const Forest = ({userRoadmap}) => {
   // const totalCheckpoints = roadmap.length;
   const [clearedCheckpoints, setClearedCheckpoints] = useState(roadmap.filter(checkpoint => checkpoint.isCompleted === true).length);
   const [percentage, setPercentage] = useState(0);
-  const totalTrees = 25;
+  const totalTrees = 50;
 
   const getRandomPosition = () => {
-    const maxX = 100; // Maximum x-coordinate within the specified area
-    const maxY = 100; // Maximum y-coordinate within the specified area
+    const maxX = 0; // Maximum x-coordinate within the specified area
+    const maxY = 50; // Maximum y-coordinate within the specified area
     const position = {
       x: Math.floor(Math.random() * maxX),
       y: Math.floor(Math.random() * maxY),
@@ -35,18 +35,22 @@ const Forest = ({userRoadmap}) => {
     // const treesToGib = Math.floor(totalTrees*completedPercent);
     setClearedCheckpoints((prevCount) => prevCount + 1);
   };
-
+  const trees = [];
   if(clearedCheckpoints/roadmap.length > 0){
     const treesToGib = Math.floor(totalTrees*(clearedCheckpoints/roadmap.length));
-    console.log(treesToGib)
+    console.log(treesToGib);
+    for(let i=0; i<treesToGib; i++){
+      trees.push(<Tree key={i} isVisible={true} position={getRandomPosition()} />)
+    }
   }
 
   return (
     <div className="forest">
       <div className="tree-container">
-        {Array.from({ length: totalTrees }, (v, i) => (
+        {/* {Array.from({ length: totalTrees }, (v, i) => (
           <Tree key={i} isVisible={i < clearedCheckpoints} position={getRandomPosition()} />
-        ))}
+        ))} */}
+        {trees}
       </div>
       <button onClick={handleCheckpointCompletion}>Complete Checkpoint</button>
     </div>
