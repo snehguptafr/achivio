@@ -13,7 +13,7 @@ export default function App(){
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/create" element={<CreateRoadmap />} />
-            <Route path="/view/:id" element={<ViewRoadmap />} />
+            <Route path="/view/:roadMap" element={<ViewRoadmap />} />
             <Route path="/show" element={<ShowRoadmaps />} />
 
         </Routes>
