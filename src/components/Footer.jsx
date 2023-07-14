@@ -1,4 +1,5 @@
 import React from "react";
+import './css_files/Footer.css';
 import shravs from './images/shravsIMG.JPG';
 import sneh from './images/snehIMG.JPG';
 import github from './images/github.png';
@@ -6,7 +7,7 @@ import linkd from './images/linkD.png';
 import insta from './images/insta.png';
 import mail from './images/mail.png';
 
-export default function footpiece() {
+export default function Footer() {
   return (
     <footer className='PAGE-END' id='CONTACTINFO'>
 

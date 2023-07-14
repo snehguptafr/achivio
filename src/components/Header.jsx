@@ -1,6 +1,7 @@
 import React from 'react';
+import './css_files/Header.css';
 
-export default function header() {
+export default function Header() {
     return (
         <header>
             <h1 className='app-logo'>#Achivio</h1>
