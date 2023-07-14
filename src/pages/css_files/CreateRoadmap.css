@@ -8,7 +8,8 @@
     box-sizing: border-box;
     background-color: #ffffff;
     opacity: 1;
-    background-image:  linear-gradient(#6D9054 1.1px, transparent 1.1px), linear-gradient(to right, #6D9054 1.1px, #ffffff 1.1px);
+    background-image:  linear-gradient(#6D9054 1.1px, transparent 1.1px), 
+    linear-gradient(to right, #6D9054 1.1px, #ffffff 1.1px);
     background-size: 22px 22px;
 }
 

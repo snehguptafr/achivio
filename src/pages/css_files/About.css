@@ -4,13 +4,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@700&display=swap');
 /* @import './src./App.jsx' */
 
-section {
+.about-sec {
     position: relative;
     min-height: 400px;
     padding: 100px 0vh;
-}
 
-.about-sec {
     display: flex;
     flex-direction: column;
     align-items: center;
