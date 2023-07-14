@@ -19,6 +19,9 @@ export default function ShowRoadmaps() {
   return (
     <div className="show-rms-page app">
       <Header />
+      <div className="roadmap-card">
+        <Link to={'/create'}><h1>+</h1></Link>
+      </div>
       {roadmaps}
     </div>
   );
