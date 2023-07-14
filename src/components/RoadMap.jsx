@@ -31,7 +31,7 @@ export default function RoadMap() {
   const onConnect = useCallback((params) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
 
   return (
-    <div style={{ width: '50vw', height: '70vh' }}>
+    <div className='static-rm' style={{ width: '50vw', height: '70vh' }}>
       <ReactFlow
         nodes={nodes}
         edges={edges}

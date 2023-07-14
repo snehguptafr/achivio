@@ -72,7 +72,7 @@
 
 /* BODY DESIGNING ENDS*/
 
-.react-flow__node.react-flow__node-output.nopan.selectable {
+.static-rm .react-flow__node.react-flow__node-output.nopan.selectable {
     font-family: 'Montserrat Subrayada', sans-serif;
     font-size: large;
     font-style: italic;
