@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./css_files/Forest.css";
 import tree from "./images/2-treetogrow.png";
+import { useNavigate } from "react-router-dom";
 
 const Tree = ({ isVisible, position }) => {
   const treeStyle = {
@@ -18,6 +19,7 @@ const Tree = ({ isVisible, position }) => {
 };
 
 const Forest = ({ userRoadmap }) => {
+  const navigate = useNavigate();
   const roadmap = JSON.parse(localStorage.getItem(userRoadmap)).reverse();
   console.log(roadmap);
   // const totalCheckpoints = roadmap.length;
@@ -59,8 +61,9 @@ const Forest = ({ userRoadmap }) => {
   return (
     <>
       <div className="forest">
-        <button className="contactBtn" onClick={handleCheckpointCompletion}>
-          Complete Checkpoint
+        <button className="contactBtn" onClick={clearedCheckpoints===roadmap.length ? () => navigate('/certificate') 
+        : handleCheckpointCompletion}>
+          {clearedCheckpoints===roadmap.length ? 'Get Certificate!' : 'Complete Checkpoint'}
         </button>
         <div className="tree-container">
           {/* {Array.from({ length: totalTrees }, (v, i) => (
