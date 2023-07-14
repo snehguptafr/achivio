@@ -19,7 +19,6 @@ footer {
 }
 
 .us {
-    /* min-height: 50vw; */
     min-height: 50vh;
     min-width: 60vw;
     display: flex;
@@ -27,7 +26,6 @@ footer {
     align-items: center;
     padding: 0px;
     margin-inline: 10vh;
-
     gap: 50px;
     justify-content: space-between;
     padding: 10PX;
@@ -35,18 +33,43 @@ footer {
 
 .group {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 15px;
+    align-items:flex-start;
+    justify-content: center;
+    padding-inline: 10px;
 }
 
-.group img {
+.people>img {
     height: 210px;
-    border-radius: 25px;
-    border: 2px solid black;
+    border-radius: 50%;
 }
+
+.people{
+    display: flex;
+    background-color: #638651;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 6px 8px 4px rgba(0, 0, 0, 0.5);
+}
+
+.people p{
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Passion One', cursive; */
+    letter-spacing: 2.5px;
+    font-weight:bold;
+}
+
 
 .social-icon {
     height: 40px;
+    transition: transform 1000ms;
+}
+
+.social-icon:hover{
+    transform: translateY(-0.40rem);
+
 }
 
 .socials {
@@ -54,4 +77,5 @@ footer {
     grid-template-columns: repeat(5, 44px);
     gap: 15px;
     justify-items: center;
+    padding-block: 10px;
 }
