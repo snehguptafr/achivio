@@ -3,6 +3,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@700&display=swap');
 
 /* HEADER DESIGNING STARTS*/
+header > h1 > a{
+    text-decoration: none;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+}
 .app-logo {
     font-family: 'Montserrat Subrayada', sans-serif;
     font-size: 60px;
@@ -10,6 +17,7 @@
     cursor: pointer;
     margin-right: auto;
 }
+
 
 li,
 a {
