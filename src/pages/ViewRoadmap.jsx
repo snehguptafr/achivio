@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Header from "../components/Header";
 import ReactFlow, { Controls, Background } from 'reactflow';
+import Header from "../components/Header";
+import Forest from "../components/Forest";
 import 'reactflow/dist/style.css';
 
 export default function ViewRoadmap() {
@@ -69,7 +70,7 @@ export default function ViewRoadmap() {
           </div>
 
           <div>
-            {/* <Forest /> */}
+            <Forest />
           </div>
           </>
 

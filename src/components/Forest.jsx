@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './Forest.css';
-import tree from '../images/2-treetogrow.png'
+import "./css_files/Forest.css"
+import tree from './images/2-treetogrow.png'
 
 const Tree = ({ isVisible, position }) => {
   const treeStyle = {
