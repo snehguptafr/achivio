@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import './css_files/ShowRoadmaps.css';
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function ShowRoadmaps() {
   //   const [checkpoints, setCheckpoints] = React.useState([]); //state to store checkpoints
@@ -11,7 +11,7 @@ export default function ShowRoadmaps() {
   const navigate = useNavigate();
 
   const roadmaps = Object.keys(localStorage).map((roadmap) => {
-    return(
+    return (
       <div onClick={() => navigate(`/view/${roadmap}`)} key={Object.keys(localStorage).indexOf(roadmap)} className="roadmap-card">
         <h1>{roadmap}</h1>
       </div>
@@ -24,11 +24,13 @@ export default function ShowRoadmaps() {
 
       <div className="cards-edit">
 
-      <div onClick={() => navigate(`/create`)} className="roadmap-card">
-        <h1>+</h1>
-      </div>
-      {roadmaps}
-        
+        <div onClick={() => navigate(`/create`)} className="roadmap-card">
+          <h1><span className="material-symbols-outlined">
+            add
+          </span></h1>
+        </div>
+        {roadmaps}
+
       </div>
 
     </div>
