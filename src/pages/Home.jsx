@@ -1,10 +1,12 @@
 import './css_files/body_rm.css';
 import './css_files/About.css';
-import RoadMap from '../components/Roadmap.jsx'
+import RoadMap from '../components/RoadMap.jsx'
 import Header from '../components/Header.jsx'
 import Footer from '../components/Footer.jsx'
+import { useNavigate } from 'react-router-dom';
 
 function App() {
+    const navigate = useNavigate();
 
     return (
         <div className='mainDiv'>
@@ -21,13 +23,13 @@ function App() {
                         <li id='perk-3'>Progress Visualization</li>
                         <li id='perk-4'>Self Accountability</li>
                     </ul>
-                    <button className="CTA">
+                    <button className="CTA" onClick={()=>{navigate("/show")}}>
                         Let's go!
                     </button>
                 </div>
 
                 <div className='static-rm'>
-                    {RoadMap()}
+                    <RoadMap />
                 </div>
 
             </div>
