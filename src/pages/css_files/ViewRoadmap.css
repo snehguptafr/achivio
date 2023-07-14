@@ -1,0 +1,12 @@
+#visible-rm .react-flow__node {
+    border-radius: 20px;
+    border-width: 3px;
+    font-size: 24px;
+}
+
+#visible-rm .react-flow{
+    border: 4px solid rgb(58, 58, 58);
+    border-radius: 20px;
+    background-color: #B7E1A1;
+    margin-bottom: 10px;
+}

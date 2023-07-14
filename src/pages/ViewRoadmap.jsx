@@ -4,6 +4,7 @@ import ReactFlow, { Controls, Background } from 'reactflow';
 import Header from "../components/Header";
 import Forest from "../components/Forest";
 import 'reactflow/dist/style.css';
+import './css_files/ViewRoadmap.css';
 
 export default function ViewRoadmap() {
   const { roadMap } = useParams();
@@ -52,12 +53,12 @@ export default function ViewRoadmap() {
   }, [roadMap])
 
   return (
-    <>
+    <div className="app">
       <Header />
       <section id="flow-tree-yes">
         {initialEdges.length>0?(
           <>
-          <div style={{ width: "500px", height: "80vh" }}>
+          <div id="visible-rm" style={{ width: "500px", height: "80vh" }}>
             <ReactFlow
               defaultNodes={initialNodes}
               defaultEdges={initialEdges}
@@ -79,6 +80,6 @@ export default function ViewRoadmap() {
         )}
 
       </section>
-    </>
+    </div>
   );
 }
