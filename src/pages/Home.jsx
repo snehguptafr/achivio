@@ -13,7 +13,7 @@ function App() {
 
             <Header />
 
-            <div className='body-sec'>
+            <div className='body-sec' id='HOME'>
                 <div className='text-based'> {/* Tagline, perks, and button */}
                     <h2 className='tagline'>Unlock your potential, <br></br>
                         <span id='special-letters'>One checkpoint</span> at a time.</h2>
