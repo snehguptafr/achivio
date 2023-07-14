@@ -1,21 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import "./css_files/Forest.css"
-import tree from './images/2-treetogrow.png'
+import React, { useState } from "react";
+import "./css_files/Forest.css";
+import tree from "./images/2-treetogrow.png";
 
 const Tree = ({ isVisible, position }) => {
   const treeStyle = {
     transform: `translate(${position.x}px, ${position.y}px)`,
   };
 
-  return <img src={tree} alt='' className={`tree ${isVisible ? 'visible' : 'hidden'}`} style={treeStyle} />;
+  return (
+    <img
+      src={tree}
+      alt=""
+      className={`tree ${isVisible ? "visible" : "hidden"}`}
+      style={treeStyle}
+    />
+  );
 };
 
-const Forest = ({userRoadmap}) => {
+const Forest = ({ userRoadmap }) => {
   const roadmap = JSON.parse(localStorage.getItem(userRoadmap)).reverse();
   console.log(roadmap);
   // const totalCheckpoints = roadmap.length;
-  const [clearedCheckpoints, setClearedCheckpoints] = useState(roadmap.filter(checkpoint => checkpoint.isCompleted === true).length);
-  const [percentage, setPercentage] = useState(0);
+  const [clearedCheckpoints, setClearedCheckpoints] = useState(
+    roadmap.filter((checkpoint) => checkpoint.isCompleted === true).length
+  );
   const totalTrees = 50;
 
   const getRandomPosition = () => {
@@ -36,24 +44,32 @@ const Forest = ({userRoadmap}) => {
     setClearedCheckpoints((prevCount) => prevCount + 1);
   };
   const trees = [];
-  if(clearedCheckpoints/roadmap.length > 0){
-    const treesToGib = Math.floor(totalTrees*(clearedCheckpoints/roadmap.length));
+  if (clearedCheckpoints / roadmap.length > 0) {
+    const treesToGib = Math.floor(
+      totalTrees * (clearedCheckpoints / roadmap.length)
+    );
     console.log(treesToGib);
-    for(let i=0; i<treesToGib; i++){
-      trees.push(<Tree key={i} isVisible={true} position={getRandomPosition()} />)
+    for (let i = 0; i < treesToGib; i++) {
+      trees.push(
+        <Tree key={i} isVisible={true} position={getRandomPosition()} />
+      );
     }
   }
 
   return (
-    <div className="forest">
-      <div className="tree-container">
-        {/* {Array.from({ length: totalTrees }, (v, i) => (
+    <>
+      <div className="forest">
+        <button className="contactBtn" onClick={handleCheckpointCompletion}>
+          Complete Checkpoint
+        </button>
+        <div className="tree-container">
+          {/* {Array.from({ length: totalTrees }, (v, i) => (
           <Tree key={i} isVisible={i < clearedCheckpoints} position={getRandomPosition()} />
         ))} */}
-        {trees}
+          {trees}
+        </div>
       </div>
-      <button onClick={handleCheckpointCompletion}>Complete Checkpoint</button>
-    </div>
+    </>
   );
 };
 

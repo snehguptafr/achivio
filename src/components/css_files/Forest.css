@@ -4,6 +4,20 @@
     align-items: center;
     justify-content: space-between;
     min-height: 70vh;
+    gap: 1rem;
+}
+
+.forest .contactBtn{
+    background-color: #884A39;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    transition:  0.8s ease;
+}
+
+.forest .contactBtn:hover{
+    letter-spacing: 2px;
 }
 
 .tree-container {
@@ -23,7 +37,7 @@
 }
 
 .tree-container:hover {
-    transform: translateY(-0.70rem)
+    transform: translateY(-0.40rem)
 }
 
 .tree {
