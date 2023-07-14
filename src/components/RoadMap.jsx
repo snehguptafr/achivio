@@ -9,7 +9,7 @@ import ReactFlow, {
 import 'reactflow/dist/style.css';
 
 const initialNodes = [
-  { id: '1', position: { x: 80, y: 80 }, data: { label: 'Sign up' }, type: 'input' },
+  { id: '1', position: { x: 80, y: 80 }, data: { label: 'Get started' }, type: 'input' },
   { id: '2', position: { x: 90, y: 180 }, data: { label: 'Create Roadmap' } },
   { id: '3', position: { x: 100, y: 280 }, data: { label: 'Visualize the Roadmap' } },
   { id: '4', position: { x: 110, y: 380 }, data: { label: 'Track Progress' }, sourcePosition: 'right' },
