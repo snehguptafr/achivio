@@ -8,14 +8,14 @@ import Certificate from "./pages/Certificate";
 
 export default function App(){
 
-    function checkScreenSize() {
-        if (window.innerWidth < 1200) {
-          alert('Please try this web app on a laptop for the best experience.');
-        }
-      }
+    // function checkScreenSize() {
+    //     if (window.innerWidth < 1200) {
+    //       alert('Please try this web app on a laptop for the best experience.');
+    //     }
+    //   }
       
-      window.addEventListener('load', checkScreenSize);
-      window.addEventListener('resize', checkScreenSize);
+    //   window.addEventListener('load', checkScreenSize);
+    //   window.addEventListener('resize', checkScreenSize);
       
 
     return(
