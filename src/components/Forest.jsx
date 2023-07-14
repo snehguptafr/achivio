@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./css_files/Forest.css"
 import tree from './images/2-treetogrow.png'
 
@@ -10,8 +10,12 @@ const Tree = ({ isVisible, position }) => {
   return <img src={tree} alt='' className={`tree ${isVisible ? 'visible' : 'hidden'}`} style={treeStyle} />;
 };
 
-const Forest = () => {
-  const [clearedCheckpoints, setClearedCheckpoints] = useState(0);
+const Forest = ({userRoadmap}) => {
+  const roadmap = JSON.parse(localStorage.getItem(userRoadmap)).reverse();
+  console.log(roadmap);
+  // const totalCheckpoints = roadmap.length;
+  const [clearedCheckpoints, setClearedCheckpoints] = useState(roadmap.filter(checkpoint => checkpoint.isCompleted === true).length);
+  const [percentage, setPercentage] = useState(0);
   const totalTrees = 25;
 
   const getRandomPosition = () => {
@@ -25,8 +29,17 @@ const Forest = () => {
   };
 
   const handleCheckpointCompletion = () => {
+    roadmap[clearedCheckpoints].isCompleted = true;
+    localStorage.setItem(userRoadmap, JSON.stringify(roadmap.reverse()));
+    // const completedPercent = ((clearedCheckpoints+1)/roadmap.length);
+    // const treesToGib = Math.floor(totalTrees*completedPercent);
     setClearedCheckpoints((prevCount) => prevCount + 1);
   };
+
+  if(clearedCheckpoints/roadmap.length > 0){
+    const treesToGib = Math.floor(totalTrees*(clearedCheckpoints/roadmap.length));
+    console.log(treesToGib)
+  }
 
   return (
     <div className="forest">

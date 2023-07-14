@@ -43,13 +43,9 @@ export default function ViewRoadmap() {
     setInitialNodes(nodes); //sets the state with nodes for flowchart
     setInitialEdges(edges); //sets the state with edges for flowchart
   }
-  console.log(initialEdges, initialNodes)
 
   useEffect(()=>{
     generateRoadmap(roadMap);
-    console.log("effect ran")
-    console.log(roadMap)
-    // console.log(initialEdges, initialNodes)
   }, [roadMap])
 
   return (
@@ -71,7 +67,7 @@ export default function ViewRoadmap() {
           </div>
 
           <div>
-            <Forest />
+            <Forest userRoadmap={roadMap} />
           </div>
           </>
 
