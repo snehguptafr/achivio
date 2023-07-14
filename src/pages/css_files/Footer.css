@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@700&display=swap');
+
+/* FOOTER DESIGNING */
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(95, 141, 78);
+    background: linear-gradient(to bottom, rgba(95, 141, 78, 1) 0%, rgba(194, 223, 184, 1) 100%);
+}
+
+.s-phrase {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.us {
+    /* min-height: 50vw; */
+    min-height: 50vh;
+    min-width: 60vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    margin-inline: 10vh;
+
+    gap: 50px;
+    justify-content: space-between;
+    padding: 10PX;
+}
+
+.group {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.group img {
+    height: 210px;
+    border-radius: 25px;
+    border: 2px solid black;
+}
+
+.social-icon {
+    height: 40px;
+    /* padding-inline: 10px; */
+}
+
+.socials {
+    display: grid;
+    grid-template-columns: repeat(5, 44px);
+    gap: 15px;
+    justify-items: center;
+}
