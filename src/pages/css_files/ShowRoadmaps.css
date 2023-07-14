@@ -1,8 +1,37 @@
-/* .show-rms-page{
-    min-height: 100vh;
-    background-color: #ffffff;
-    opacity: 1;
-    background-image:  linear-gradient(#6D9054 1.1px, transparent 1.1px), 
-    linear-gradient(to right, #6D9054 1.1px, #ffffff 1.1px);
-    background-size: 22px 22px;
-} */
+.cards-edit{
+    /* background-color: black; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.roadmap-card{
+    background-color: #B7E1A1;
+    border: 4px solid white;
+    border-radius: 25px;
+    box-shadow: 6px 8px 4px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    min-height: 15rem;
+    min-width: 15rem;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.8s ease;
+    cursor: pointer;
+}
+
+.roadmap-card:hover{
+    background-color: #9bbd89;
+    transform: translateY(-0.70rem)
+
+}
+
+.roadmap-card h1{
+    margin: 0px;
+    padding: 0px;
+    display: inline;
+}
