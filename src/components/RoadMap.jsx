@@ -38,6 +38,7 @@ export default function RoadMap() {
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
+        proOptions={{ hideAttribution: true }}
         fitView
       >
         <Controls />
