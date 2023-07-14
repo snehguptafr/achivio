@@ -1,8 +1,8 @@
 import './css_files/body_rm.css';
 import './css_files/About.css';
-import RoadMap from '../components/RoadMap.jsx'
-import Header from '../components/Header.jsx'
-import Footer from '../components/Footer.jsx'
+import RoadMap from '../components/RoadMap';
+import Header from '../components/Header.jsx';
+import Footer from '../components/Footer.jsx';
 import { useNavigate } from 'react-router-dom';
 
 function App() {
