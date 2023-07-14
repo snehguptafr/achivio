@@ -8,6 +8,7 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
+    padding-bottom: 30px;
 }
 
 .body-sec.roadmap-comes-here {
@@ -76,4 +77,18 @@
     font-family: 'Montserrat Subrayada', sans-serif;
     font-size: large;
     font-style: italic;
+}
+
+
+.static-rm .react-flow{
+    border: 4px solid rgb(58, 58, 58);
+    border-radius: 20px;
+    background-color: #B7E1A1;
+    margin-bottom: 10px;
+}
+
+.static-rm .react-flow__node {
+    font-family: 'Montserrat', sans-serif;
+    proOptions={{ hideAttribution: true }}
+
 }
