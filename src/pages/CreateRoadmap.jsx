@@ -1,11 +1,14 @@
 import React from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { useNavigate } from "react-router-dom";
 import Form from "../components/Form";
 import Header from "../components/Header";
 import "./css_files/CreateRoadmap.css";
 
 export default function CreateRoadmap() {
   const [checkpoints, setCheckpoints] = React.useState([]);
+  const navigate = useNavigate();
+
 
   function submitHandler(e) {
     //handling first form's(checkpoints input) submit
@@ -75,6 +78,7 @@ export default function CreateRoadmap() {
     const roadmapName = e.target[0].value; //gets the value of the input field
     localStorage.setItem(roadmapName, JSON.stringify(checkpoints)); //sets the roadmap name as key and checkpoints as value in localStorage
     // generateRoadmap(roadmapName); // this actually generates the nodes and edges
+    navigate("/show");
   }
 
   return (
