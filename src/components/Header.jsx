@@ -5,12 +5,13 @@ export default function Header() {
     return (
         <header>
             <h1 className='app-logo'>#Achivio</h1>
-            <nav>
-                <ul className='nav-links'>
-                    <li><a href="#ABOUT">About</a></li>
-                </ul>
+            <nav className='island-button'>
+
+                <a href="#ABOUT"><button className='contactBtn'>About</button></a>
+                
+                <a href="#CONTACTINFO"><button className='contactBtn'>Contact</button></a>
             </nav>
-            <a href="#CONTACTINFO"><button className='contactBtn'>Contact</button></a>
+            
 
         </header>
 
