@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import './css_files/ShowRoadmaps.css';
+import { Link } from "react-router-dom";
 
 export default function ShowRoadmaps() {
   //   const [checkpoints, setCheckpoints] = React.useState([]); //state to store checkpoints
@@ -10,7 +11,7 @@ export default function ShowRoadmaps() {
   const roadmaps = Object.keys(localStorage).map((roadmap) => {
     return(
       <div key={Object.keys(localStorage).indexOf(roadmap)} className="roadmap-card">
-        <h1>{roadmap}</h1>
+        <Link to={`/view/${roadmap}`}><h1>{roadmap}</h1></Link>
       </div>
     )
   })
