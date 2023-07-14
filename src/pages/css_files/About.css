@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Passion+One:wght@700&display=swap');
+/* @import './src./App.jsx' */
+
+section {
+    position: relative;
+    min-height: 400px;
+    padding: 100px 0vh;
+}
+
+.about-sec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #5F8D4E; */
+    font-family: 'Montserrat', sans-serif;
+
+    background-color: #5F8D4E;
+    opacity: 1;
+    background-image: radial-gradient(#ffffff 0.8500000000000001px, transparent 0.8500000000000001px), radial-gradient(#ffffff 0.8500000000000001px, #5F8D4E 0.8500000000000001px);
+    background-size: 34px 34px;
+    background-position: 0 0, 17px 17px;
+}
+
+.itallian {
+    font-style: italic;
+}
+
+/* TOP DESIGNING */
+.top-wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.top-wave svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 76px;
+}
+
+.top-wave .shape-fill {
+    fill: #FFFFFF;
+}
+
+/* TOP DESIGNING ENDS */
+
+/* ABOUT SECTION STARTS */
+.sec-heading {
+    font-family: 'Passion One', cursive;
+    font-weight: 900;
+    font-size: 50px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.explanation {
+    text-align: justify;
+    font-size: 18px;
+    margin-inline: 15vw;
+    line-height: 1.8;
+}
+
+#welcome {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#app-name {
+    font-family: 'Montserrat Subrayada', sans-serif;
+    font-style: italic;
+}
+
+/* ABOUT SECTION ENDS */
