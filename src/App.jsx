@@ -26,7 +26,7 @@ export default function App(){
             <Route path="/create" element={<CreateRoadmap />} />
             <Route path="/view/:roadMap" element={<ViewRoadmap />} />
             <Route path="/show" element={<ShowRoadmaps />} />
-            <Route path='/certificate' element={<Certificate />} />
+            <Route path='/certificate/:roadMap' element={<Certificate />} />
 
         </Routes>
         </BrowserRouter>
