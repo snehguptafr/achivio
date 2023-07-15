@@ -35,7 +35,7 @@
     padding-inline: 5px;
 }
 
-#special-letters {
+.special-letters {
     color: #5F8D4E;
     text-shadow: 2px 2px 4px rgba(95, 141, 78, 0.5);
 }

@@ -18,9 +18,11 @@
 
     background-color: #5F8D4E;
     opacity: 1;
-    background-image: radial-gradient(#ffffff 0.8500000000000001px, transparent 0.8500000000000001px), radial-gradient(#ffffff 0.8500000000000001px, #5F8D4E 0.8500000000000001px);
+    background-image: radial-gradient(#ffffff 0.8500000000000001px, transparent 0.8500000000000001px), 
+    radial-gradient(#ffffff 0.8500000000000001px, #5F8D4E 0.8500000000000001px);
     background-size: 34px 34px;
     background-position: 0 0, 17px 17px;
+    
 }
 
 .itallian {
