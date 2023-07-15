@@ -16,7 +16,7 @@ function App() {
             <div className='body-sec' id='HOME'>
                 <div className='text-based'> {/* Tagline, perks, and button */}
                     <h2 className='tagline'>Unlock your potential, <br></br>
-                        <span id='special-letters'>One checkpoint</span> at a time.</h2>
+                        <span className='special-letters'>One checkpoint</span> at a time.</h2>
                     <ul className='perks-list'>
                         <li id='perk-1'>Goal tracking</li>
                         <li id='perk-2'>Plan and Organize</li>
