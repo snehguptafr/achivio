@@ -59,6 +59,7 @@ const Forest = ({ userRoadmap }) => {
     }
     setClearedCheckpoints((prevCount) => prevCount + 1);
   };
+
   const trees = [];
   if (clearedCheckpoints / roadmap.length > 0) {
     const treesToGib = Math.floor(
@@ -70,6 +71,13 @@ const Forest = ({ userRoadmap }) => {
         <Tree key={i} isVisible={true} position={getRandomPosition()} />
       );
     }
+  }
+
+  const handleUndoCheckpoint = () => {
+    roadmap[clearedCheckpoints-1].isCompleted = false;
+    localStorage.setItem(userRoadmap, JSON.stringify(roadmap.reverse()));
+    window.location.reload(false)
+    setClearedCheckpoints((prevCount) => prevCount - 1)
   }
 
   // React.useEffect(() => {
@@ -85,20 +93,23 @@ const Forest = ({ userRoadmap }) => {
   return (
     <>
       <div className="forest">
-        <button
-          className={
-            clearedCheckpoints === roadmap.length ? "discoBtn" : "contactBtn"
-          }
-          onClick={
-            clearedCheckpoints === roadmap.length
-              ? () => navigate(`/certificate/${userRoadmap}`)
-              : handleCheckpointCompletion
-          }
-        >
-          {clearedCheckpoints === roadmap.length
-            ? "Get Certificate!"
-            : "Complete Checkpoint"}
-        </button>
+        <div className="btns">
+          <button
+            className={
+              clearedCheckpoints === roadmap.length ? "discoBtn" : "contactBtn"
+            }
+            onClick={
+              clearedCheckpoints === roadmap.length
+                ? () => navigate(`/certificate/${userRoadmap}`)
+                : handleCheckpointCompletion
+            }
+          >
+            {clearedCheckpoints === roadmap.length
+              ? "Get Certificate!"
+              : "Complete Checkpoint"}
+          </button>
+          {clearedCheckpoints > 0 && <button className="contactBtn" onClick={handleUndoCheckpoint}>Undo Checkpoint</button>}
+        </div>
         <div className="tree-container">
           {/* {Array.from({ length: totalTrees }, (v, i) => (
           <Tree key={i} isVisible={i < clearedCheckpoints} position={getRandomPosition()} />
