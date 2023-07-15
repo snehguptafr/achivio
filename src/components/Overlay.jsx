@@ -1,9 +1,9 @@
 import React from 'react';
 import "./css_files/Overlay.css"
-const OverlayComponent = () => {
+const OverlayComponent = ({ message }) => {
   return (
     <div className="overlay">
-      <h1>HYYY</h1>
+      <h1>{message}</h1>
     </div>
   );
 };
