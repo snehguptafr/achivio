@@ -44,7 +44,13 @@ const Forest = ({ userRoadmap }) => {
   const handleCheckpointCompletion = () => {
     roadmap[clearedCheckpoints].isCompleted = true;
     localStorage.setItem(userRoadmap, JSON.stringify(roadmap.reverse()));
-    window.location.reload(false);
+    if(clearedCheckpoints+1 === roadmap.length){
+      setShowOverlay(true)
+      setTimeout(()=> window.location.reload(false), 5000)
+    }
+    else{
+      window.location.reload(false);
+    }
     setClearedCheckpoints((prevCount) => prevCount + 1);
 
   };
@@ -61,15 +67,15 @@ const Forest = ({ userRoadmap }) => {
     }
   }
 
-  React.useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowOverlay(false);
-    }, 5000); // Set the duration in milliseconds (e.g., 5000 = 5 seconds)
+  // React.useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setShowOverlay(false);
+  //   }, 5000); // Set the duration in milliseconds (e.g., 5000 = 5 seconds)
 
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
+  //   return () => {
+  //     clearTimeout(timer);
+  //   };
+  // }, []);
 
   return (
     <>
@@ -84,7 +90,7 @@ const Forest = ({ userRoadmap }) => {
         ))} */}
           {trees}
         </div>
-        {clearedCheckpoints===roadmap.length && <Overlay />}
+        {showOverlay && <Overlay />}
         
       </div>
     </>
