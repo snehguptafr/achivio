@@ -37,9 +37,11 @@ export default function ShowRoadmaps() {
       <div className="cards-edit">
 
         <div onClick={() => navigate(`/create`)} className="roadmap-card">
-          <h1><span className="material-symbols-outlined">
+          <h1>Add Roadmap <br />
+            <span className="material-symbols-outlined">
             add
-          </span></h1>
+          </span>
+          </h1>
         </div>
         {roadmaps}
 

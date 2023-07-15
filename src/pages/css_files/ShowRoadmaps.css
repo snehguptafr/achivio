@@ -16,7 +16,6 @@
     border: 4px solid white;
     border-radius: 25px;
     box-shadow: 6px 8px 4px rgba(0, 0, 0, 0.5);
-    padding: 10px;
     height: 15rem;
     width: 15rem;
     margin: 10px;
@@ -36,12 +35,12 @@
 
 .roadmap-card h1 {
     margin: 0px;
-    padding: 0px;
     display: inline;
     cursor: pointer;
-    padding: 20px;
+    padding: 30px;
     white-space: normal;
     word-wrap: break-word;
+    text-align: center;
 
 }
 
