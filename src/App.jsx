@@ -13,11 +13,9 @@ export default function App(){
     function checkScreenSize() {
         if (illegalSize === false && window.innerWidth < 1200) {
             setIllegalSize(true)
-            console.log("illegal")
         }
         else if  (illegalSize === true && window.innerWidth >= 1200){
             setIllegalSize(false)
-            console.log("legal")
         }
       }
       
