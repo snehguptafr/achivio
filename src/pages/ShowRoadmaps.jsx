@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Header from "../components/Header";
 import './css_files/ShowRoadmaps.css';
 import { useNavigate } from "react-router-dom";
+import ProgressBar from "../components/ProgressBar";
 
 export default function ShowRoadmaps() {
 
@@ -21,6 +22,7 @@ export default function ShowRoadmaps() {
         </button>
 
         <h1 onClick={() => navigate(`/view/${roadmap}`)}>{roadmap}</h1>
+        <ProgressBar />
       </div>
     )
   })
