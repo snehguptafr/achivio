@@ -41,9 +41,9 @@ const Forest = ({ userRoadmap }) => {
   const handleCheckpointCompletion = () => {
     roadmap[clearedCheckpoints].isCompleted = true;
     localStorage.setItem(userRoadmap, JSON.stringify(roadmap.reverse()));
-    // const completedPercent = ((clearedCheckpoints+1)/roadmap.length);
-    // const treesToGib = Math.floor(totalTrees*completedPercent);
+    window.location.reload(false)
     setClearedCheckpoints((prevCount) => prevCount + 1);
+
   };
   const trees = [];
   if (clearedCheckpoints / roadmap.length > 0) {
