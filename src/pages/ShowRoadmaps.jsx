@@ -1,20 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
 import './css_files/ShowRoadmaps.css';
 import { useNavigate } from "react-router-dom";
 
 export default function ShowRoadmaps() {
-  //   const [checkpoints, setCheckpoints] = React.useState([]); //state to store checkpoints
-  //   const [initialNodes, setInitialNodes] = React.useState([]); // store flowchart nodes from checkpoints
-  //   const [initialEdges, setInitialEdges] = React.useState([]); //store the path/connection of nodes in the flowchart
 
   const navigate = useNavigate();
+
+  const [delCount, setDelCount] = useState(0);
 
   const roadmaps = Object.keys(localStorage).map((roadmap) => {
     return (
       <div key={Object.keys(localStorage).indexOf(roadmap)} className="roadmap-card">
 
-        <button className="cross-but" id='del-rm' onClick={()=> localStorage.removeItem(roadmap)}> 
+        <button className="cross-but" id='del-rm' onClick={()=> 
+        {localStorage.removeItem(roadmap);
+          setDelCount(delCount+1)
+        }}> 
           X
         </button>
 
