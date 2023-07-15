@@ -11,6 +11,9 @@ export default function ShowRoadmaps() {
   const [delCount, setDelCount] = useState(0);
 
   const roadmaps = Object.keys(localStorage).map((roadmap) => {
+    const rmap = JSON.parse(localStorage.getItem(roadmap));
+    const completed = rmap.filter(checkpt => checkpt.isCompleted === true).length;
+    const completePercent = (completed/rmap.length)*100;
     return (
       <div key={Object.keys(localStorage).indexOf(roadmap)} className="roadmap-card">
 
@@ -22,7 +25,7 @@ export default function ShowRoadmaps() {
         </button>
 
         <h1 onClick={() => navigate(`/view/${roadmap}`)}>{roadmap}</h1>
-        <ProgressBar />
+        <ProgressBar percent={completePercent}  />
       </div>
     )
   })
