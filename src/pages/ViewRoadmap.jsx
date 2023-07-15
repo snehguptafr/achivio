@@ -10,7 +10,6 @@ export default function ViewRoadmap() {
   const { roadMap } = useParams();
   const [initialNodes, setInitialNodes] = React.useState([]); // store flowchart nodes from checkpoints
   const [initialEdges, setInitialEdges] = React.useState([]); //store the path/connection of nodes in the flowchart
-  // const [strike, setStrike] = useState(0); // for rerendering when completing a checkpoint
 
   
 
@@ -72,6 +71,8 @@ export default function ViewRoadmap() {
           <div>
             <Forest userRoadmap={roadMap} />
           </div>
+
+          {/* <Overlay /> */}
           </>
 
         ):(
