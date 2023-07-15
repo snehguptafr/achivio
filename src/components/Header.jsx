@@ -8,7 +8,7 @@ export default function Header() {
             <h1 className='app-logo' ><Link to={"/"}>#Achivio</Link></h1>
             <nav className='island-button'>
 
-                <a href="/#HELP"><button className='contactBtn'>Help</button></a>
+                <a href="/#HELP"><button className='contactBtn'>How does it work?</button></a>
 
                 <a href="/#ABOUT"><button className='contactBtn'>About</button></a>
 
