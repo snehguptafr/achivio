@@ -10,11 +10,13 @@ export default function Certificate() {
   const completed = roadmap.filter(checkpoint => checkpoint.isCompleted === true).length;
   console.log(completed, roadmap.length)
 
+const username = prompt("What should we call you?")
+
   return (
     completed === roadmap.length ?
     <div id="parent-certi">
       <section className="certi">
-        <h1>Congratulations, NAME!</h1>
+        <h1>Congratulations, {username}!</h1>
         <p>
           on completing your <span id="bold-it">{roadMap}</span> roadmap
         </p>
@@ -23,6 +25,9 @@ export default function Certificate() {
       </section>
     </div>
     :
-    <h1>No certificate</h1>
+    <div className="noteli">
+        <h1>We're sorry, {username}, but you're not eligible for the certificate!</h1>
+    </div>
+    
   );
 }
