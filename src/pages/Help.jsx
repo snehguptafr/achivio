@@ -1,9 +1,21 @@
 import React from "react";
+import Header from "../components/Header";
 
-export default function Help(){
-    return(
+export default function Help() {
+    return (
         <div>
-            <h1>paswod?</h1>
+            <Header />
+
+            <div className="help-main">
+                <h1>We're here to help!</h1>
+
+                <div className="help-points">
+                    
+
+                </div>
+
+            </div>
+
         </div>
     )
 }
