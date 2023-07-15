@@ -1,6 +1,6 @@
 import React from 'react';
 import "./css_files/Overlay.css"
-const OverlayComponent = ({ message }) => {
+const Overlay = ({ message }) => {
   return (
     <div className="overlay">
       <h1>{message}</h1>
@@ -8,4 +8,4 @@ const OverlayComponent = ({ message }) => {
   );
 };
 
-export default OverlayComponent;
+export default Overlay;
