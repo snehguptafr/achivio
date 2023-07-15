@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route} from "react-router-dom";
+import Overlay from "./components/Overlay";
 import Home from "./pages/Home";
 import CreateRoadmap from "./pages/CreateRoadmap";
 import ViewRoadmap from "./pages/ViewRoadmap";
@@ -8,15 +9,20 @@ import Certificate from "./pages/Certificate";
 import Help from "./pages/Help";
 
 export default function App(){
-
-    // function checkScreenSize() {
-    //     if (window.innerWidth < 1200) {
-    //       alert('Please try this web app on a laptop for the best experience.');
-    //     }
-    //   }
+    const [illegalSize, setIllegalSize] = React.useState(false)
+    function checkScreenSize() {
+        if (illegalSize === false && window.innerWidth < 1200) {
+            setIllegalSize(true)
+            console.log("illegal")
+        }
+        else if  (illegalSize === true && window.innerWidth >= 1200){
+            setIllegalSize(false)
+            console.log("legal")
+        }
+      }
       
-    //   window.addEventListener('load', checkScreenSize);
-    //   window.addEventListener('resize', checkScreenSize);
+      window.addEventListener('load', checkScreenSize);
+      window.addEventListener('resize', checkScreenSize);
       
 
     return(
@@ -31,6 +37,7 @@ export default function App(){
             <Route path="/getstarted" element={<Help />} />
 
         </Routes>
+            {illegalSize && <Overlay message={"Whoa, the screen's too small for me to fit in. Please use a device with a big screen UwU"}/>}
         </BrowserRouter>
     )
 }
