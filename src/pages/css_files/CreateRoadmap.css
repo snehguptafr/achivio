@@ -66,8 +66,8 @@ input::placeholder {
 /* BUTTONS STYLING */
 
 .cross-but {
-    height: 25px;
-    width: 25px;
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
     transition: 0.5ms;
     font-weight: 600;

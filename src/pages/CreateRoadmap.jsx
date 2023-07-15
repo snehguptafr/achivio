@@ -1,12 +1,16 @@
 import React from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Form from "../components/Form";
 import Header from "../components/Header";
 import "./css_files/CreateRoadmap.css";
 
 export default function CreateRoadmap() {
-  const [checkpoints, setCheckpoints] = React.useState([]);
+  // useLocation().state.hasOwnProperty("userRoadmap") && const { userRoadmap } = useLocation().state;
+  const location = useLocation();
+  console.log(location)
+  const userRoadmap = location.hasOwnProperty("state") ? location.state ? location.state.userRoadmap : false : false;
+  const [checkpoints, setCheckpoints] = React.useState(userRoadmap ? JSON.parse(localStorage.getItem(userRoadmap)): []);
   const navigate = useNavigate();
 
 
@@ -76,6 +80,9 @@ export default function CreateRoadmap() {
     // gets fired on submission of the second form(roadmap name). Creates roadmap nodes and edges(not exactly, calls a different function to do that)
     e.preventDefault();
     const roadmapName = e.target[0].value; //gets the value of the input field
+    if(userRoadmap){
+      localStorage.removeItem(userRoadmap);
+    }
     localStorage.setItem(roadmapName, JSON.stringify(checkpoints)); //sets the roadmap name as key and checkpoints as value in localStorage
     // generateRoadmap(roadmapName); // this actually generates the nodes and edges
     navigate("/show");
@@ -91,6 +98,7 @@ export default function CreateRoadmap() {
             autofocus={true}
             placeholder="Enter Roadmap checkpoint"
             btnText="Submit"
+            value=""
           />{" "}
           {/* roadmap checkpoint input form */}
           <div className="checkpoints-list">
@@ -113,6 +121,7 @@ export default function CreateRoadmap() {
               autofocus={false}
               placeholder="Enter Roadmap name"
               btnText="Create Roadmap"
+              value={userRoadmap? userRoadmap: ""}
             />
           )}{" "}
           {/* Roadmap naming form */}

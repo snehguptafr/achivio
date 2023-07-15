@@ -23,6 +23,15 @@ export default function ShowRoadmaps() {
         }}> 
           X
         </button>
+        <button className="edit-btn" onClick={() => {
+          navigate("/create", {
+            state:{
+              userRoadmap: roadmap
+            }
+          })
+        }}><span class="material-symbols-outlined" id="edit-pen">
+        edit
+        </span></button>
 
         <h1 onClick={() => navigate(`/view/${roadmap}`)}>{roadmap}</h1>
         <ProgressBar percent={completePercent}  />
