@@ -74,7 +74,7 @@ const Forest = ({ userRoadmap }) => {
   return (
     <>
       <div className="forest">
-        <button className="contactBtn" onClick={clearedCheckpoints===roadmap.length ? () => navigate(`/certificate/${userRoadmap}`) 
+        <button className={clearedCheckpoints === roadmap.length ? "discoBtn" : 'contactBtn'} onClick={clearedCheckpoints===roadmap.length ? () => navigate(`/certificate/${userRoadmap}`) 
         : handleCheckpointCompletion}>
           {clearedCheckpoints===roadmap.length ? 'Get Certificate!' : 'Complete Checkpoint'}
         </button>
