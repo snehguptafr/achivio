@@ -39,7 +39,7 @@ const Forest = ({ userRoadmap }) => {
   const totalTrees = 50;
 
   const getRandomPosition = () => {
-    const maxX = 0; // Maximum x-coordinate within the specified area
+    const maxX = 20; // Maximum x-coordinate within the specified area
     const maxY = 50; // Maximum y-coordinate within the specified area
     const position = {
       x: Math.floor(Math.random() * maxX),
