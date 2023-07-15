@@ -44,7 +44,7 @@ const Forest = ({ userRoadmap }) => {
   const handleCheckpointCompletion = () => {
     roadmap[clearedCheckpoints].isCompleted = true;
     localStorage.setItem(userRoadmap, JSON.stringify(roadmap.reverse()));
-    window.location.reload(false)
+    window.location.reload(false);
     setClearedCheckpoints((prevCount) => prevCount + 1);
 
   };
@@ -61,10 +61,20 @@ const Forest = ({ userRoadmap }) => {
     }
   }
 
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowOverlay(false);
+    }, 5000); // Set the duration in milliseconds (e.g., 5000 = 5 seconds)
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
   return (
     <>
       <div className="forest">
-        <button className={clearedCheckpoints === roadmap.length ? "Flashy-btn" : 'contactBtn'} onClick={clearedCheckpoints===roadmap.length ? () => navigate(`/certificate/${userRoadmap}`) 
+        <button className="contactBtn" onClick={clearedCheckpoints===roadmap.length ? () => navigate(`/certificate/${userRoadmap}`) 
         : handleCheckpointCompletion}>
           {clearedCheckpoints===roadmap.length ? 'Get Certificate!' : 'Complete Checkpoint'}
         </button>
@@ -74,7 +84,8 @@ const Forest = ({ userRoadmap }) => {
         ))} */}
           {trees}
         </div>
-        {showOverlay && <Overlay />}
+        {clearedCheckpoints===roadmap.length && <Overlay />}
+        
       </div>
     </>
   );
