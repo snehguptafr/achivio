@@ -4,7 +4,6 @@ import tree from "./images/2-treetogrow.png";
 import { useNavigate } from "react-router-dom";
 import Overlay from "../components/Overlay";
 
-
 const Tree = ({ isVisible, position }) => {
   const treeStyle = {
     transform: `translate(${position.x}px, ${position.y}px)`,
@@ -23,6 +22,14 @@ const Tree = ({ isVisible, position }) => {
 const Forest = ({ userRoadmap }) => {
   const [showOverlay, setShowOverlay] = React.useState(false);
   const navigate = useNavigate();
+  const messages = [
+    "YAAY!! You did it!",
+    "WOOHOO!! Look at you achieving your goals!!",
+    "You're so amazing! You did it!!",
+    "Way to go champ!! Keep it up!",
+  ];
+  const randIndex = Math.floor(Math.random() * messages.length);
+
   const roadmap = JSON.parse(localStorage.getItem(userRoadmap)).reverse();
   console.log(roadmap);
   // const totalCheckpoints = roadmap.length;
@@ -44,15 +51,13 @@ const Forest = ({ userRoadmap }) => {
   const handleCheckpointCompletion = () => {
     roadmap[clearedCheckpoints].isCompleted = true;
     localStorage.setItem(userRoadmap, JSON.stringify(roadmap.reverse()));
-    if(clearedCheckpoints+1 === roadmap.length){
-      setShowOverlay(true)
-      setTimeout(()=> window.location.reload(false), 5000)
-    }
-    else{
+    if (clearedCheckpoints + 1 === roadmap.length) {
+      setShowOverlay(true);
+      setTimeout(() => window.location.reload(false), 5000);
+    } else {
       window.location.reload(false);
     }
     setClearedCheckpoints((prevCount) => prevCount + 1);
-
   };
   const trees = [];
   if (clearedCheckpoints / roadmap.length > 0) {
@@ -80,9 +85,19 @@ const Forest = ({ userRoadmap }) => {
   return (
     <>
       <div className="forest">
-        <button className={clearedCheckpoints === roadmap.length ? "discoBtn" : 'contactBtn'} onClick={clearedCheckpoints===roadmap.length ? () => navigate(`/certificate/${userRoadmap}`) 
-        : handleCheckpointCompletion}>
-          {clearedCheckpoints===roadmap.length ? 'Get Certificate!' : 'Complete Checkpoint'}
+        <button
+          className={
+            clearedCheckpoints === roadmap.length ? "discoBtn" : "contactBtn"
+          }
+          onClick={
+            clearedCheckpoints === roadmap.length
+              ? () => navigate(`/certificate/${userRoadmap}`)
+              : handleCheckpointCompletion
+          }
+        >
+          {clearedCheckpoints === roadmap.length
+            ? "Get Certificate!"
+            : "Complete Checkpoint"}
         </button>
         <div className="tree-container">
           {/* {Array.from({ length: totalTrees }, (v, i) => (
@@ -90,8 +105,7 @@ const Forest = ({ userRoadmap }) => {
         ))} */}
           {trees}
         </div>
-        {showOverlay && <Overlay />}
-        
+        {showOverlay && <Overlay message={messages[randIndex]} />}
       </div>
     </>
   );
