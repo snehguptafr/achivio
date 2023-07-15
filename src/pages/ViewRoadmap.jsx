@@ -62,7 +62,7 @@ export default function ViewRoadmap() {
               proOptions={{ hideAttribution: true }}
             >
               <Controls />
-              <Background variant="dots" gap={12} size={1} />
+              <Background variant="dots" gap={30} size={2} />
             </ReactFlow>
           </div>
 

@@ -43,6 +43,7 @@ footer {
 .people>img {
     height: 210px;
     border-radius: 50%;
+    transition: 01s ease;
 }
 
 .people{
@@ -53,10 +54,14 @@ footer {
     box-shadow: 6px 8px 4px rgba(0, 0, 0, 0.5);
 }
 
+.people>img:hover{
+    border-radius: 25%;
+}
+
+
 .people p{
     font-size: 35px;
     font-family: 'Montserrat', sans-serif;
-    /* font-family: 'Passion One', cursive; */
     letter-spacing: 2.5px;
     font-weight:bold;
 }
