@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./css_files/Forest.css";
 import tree from "./images/2-treetogrow.png";
 import { useNavigate } from "react-router-dom";
+import Overlay from "../components/Overlay";
+
 
 const Tree = ({ isVisible, position }) => {
   const treeStyle = {
@@ -19,6 +21,7 @@ const Tree = ({ isVisible, position }) => {
 };
 
 const Forest = ({ userRoadmap }) => {
+  const [showOverlay, setShowOverlay] = React.useState(false);
   const navigate = useNavigate();
   const roadmap = JSON.parse(localStorage.getItem(userRoadmap)).reverse();
   console.log(roadmap);
@@ -71,6 +74,7 @@ const Forest = ({ userRoadmap }) => {
         ))} */}
           {trees}
         </div>
+        {showOverlay && <Overlay />}
       </div>
     </>
   );
