@@ -2,6 +2,8 @@ import React from "react";
 import "./css_files/Certificate.css";
 import Alogo from "../components/images/achivioLogo.png";
 import { useParams } from "react-router-dom";
+import html2canvas from 'html2canvas';
+
 
 export default function Certificate() {
   const { roadMap } = useParams();
@@ -10,12 +12,29 @@ export default function Certificate() {
   const completed = roadmap.filter(checkpoint => checkpoint.isCompleted === true).length;
   console.log(completed, roadmap.length)
 
-const username = prompt("What should we call you?")
+  const username = prompt("What should we call you?")
+
+  function getCertificate(){
+    const component = document.getElementById("certificate");
+    if (component) {
+      html2canvas(component, {scale: 4})
+        .then((canvas) => {
+          const dataURL = canvas.toDataURL('image/png');
+          const link = document.createElement('a');
+          link.href = dataURL;
+          link.download = `${username}-${roadMap} certificate.png`;
+          link.click();
+        })
+        .catch((error) => {
+          console.error('Error capturing image:', error);
+        });
+    }
+  }
 
   return (
     completed === roadmap.length ?
     <div id="parent-certi">
-      <section className="certi">
+      <section id="certificate" className="certi">
         <h1>Congratulations, {username}!</h1>
         <p>
           on completing your <span id="bold-it">{roadMap}</span> roadmap
@@ -23,6 +42,7 @@ const username = prompt("What should we call you?")
         <p>Good job sticking to your goals and achiving them!</p>
         <img src={Alogo} alt=" " />
       </section>
+      <button className= "load-but" onClick={getCertificate}>Download Certificate</button>
     </div>
     :
     <div className="noteli">
