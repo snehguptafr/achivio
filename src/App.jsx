@@ -5,6 +5,7 @@ import CreateRoadmap from "./pages/CreateRoadmap";
 import ViewRoadmap from "./pages/ViewRoadmap";
 import ShowRoadmaps from "./pages/ShowRoadmaps";
 import Certificate from "./pages/Certificate";
+import Help from "./pages/Help";
 
 export default function App(){
 
@@ -27,7 +28,7 @@ export default function App(){
             <Route path="/view/:roadMap" element={<ViewRoadmap />} />
             <Route path="/show" element={<ShowRoadmaps />} />
             <Route path='/certificate/:roadMap' element={<Certificate />} />
-
+            <Route path="/getstarted" element={<Help />} />
 
         </Routes>
         </BrowserRouter>
