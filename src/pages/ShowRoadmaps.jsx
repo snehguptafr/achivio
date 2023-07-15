@@ -13,6 +13,11 @@ export default function ShowRoadmaps() {
   const roadmaps = Object.keys(localStorage).map((roadmap) => {
     return (
       <div onClick={() => navigate(`/view/${roadmap}`)} key={Object.keys(localStorage).indexOf(roadmap)} className="roadmap-card">
+
+        <button className="cross-but" id='del-rm'>
+          X
+        </button>
+
         <h1>{roadmap}</h1>
       </div>
     )
