@@ -26,28 +26,28 @@ export default function Help() {
 
 
                     <div className="help-blocks">
-                        <h1>step 1</h1>
+                        <h1>Step 1</h1>
                         <img src={img1} alt="" />
                     </div>
 
                     <div className="help-blocks">
-                        <h1>step 2</h1>
+                        <h1>Step 2</h1>
                         <img src={img2} alt="" />
                     </div>
 
                     <div className="help-blocks">
-                        <h1>step 3</h1>
+                        <h1>Step 3</h1>
                         <img src={img3} alt="" />
                         <img src={img4} alt="" />
                     </div>
 
                     <div className="help-blocks">
-                        <h1>step 4</h1>
+                        <h1>Step 4</h1>
                         <img src={img5} alt="" />
                     </div>
 
                     <div className="help-blocks">
-                        <h1>step 5</h1>
+                        <h1>Step 5</h1>
                         <img src={img6} alt="" />
                         <img src={img7} alt="" />
                         <img src={img8} alt="" />
@@ -55,7 +55,7 @@ export default function Help() {
                     </div>
 
                     <div className="help-blocks">
-                        <h1>step 6</h1>
+                        <h1>Step 6</h1>
                         <img src={img10} alt="" />
                         <img src={img11} alt="" />
                     </div>
