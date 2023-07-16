@@ -12,7 +12,7 @@ export default function Footer() {
     <footer className='PAGE-END' id='CONTACTINFO'>
 
       <h2 className="s-phrase">
-        "None of us is as smart as the two of us."
+        "Neither of us is as smart as the two of us."
       </h2>
 
 
