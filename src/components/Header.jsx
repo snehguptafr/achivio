@@ -8,7 +8,10 @@ export default function Header() {
             <h1 className='app-logo' ><Link to={"/"}>#Achivio</Link></h1>
             <nav className='island-button'>
 
-                <a href="/getstarted"><button className='contactBtn' id='focus-onstart'>How does it work?</button></a>
+                <a href="/getstarted"><button
+                    className={
+                        window.location.pathname === "/" ? "contactBtn focus-onstart" : "contactBtn"
+                    }>How does it work?</button></a>
 
                 <a href="/#ABOUT"><button className='contactBtn'>About</button></a>
 
