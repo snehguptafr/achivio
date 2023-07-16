@@ -31,7 +31,6 @@ const Forest = ({ userRoadmap }) => {
   const randIndex = Math.floor(Math.random() * messages.length);
 
   const roadmap = JSON.parse(localStorage.getItem(userRoadmap)).reverse();
-  console.log(roadmap);
   // const totalCheckpoints = roadmap.length;
   const [clearedCheckpoints, setClearedCheckpoints] = useState(
     roadmap.filter((checkpoint) => checkpoint.isCompleted === true).length
@@ -65,7 +64,6 @@ const Forest = ({ userRoadmap }) => {
     const treesToGib = Math.floor(
       totalTrees * (clearedCheckpoints / roadmap.length)
     );
-    console.log(treesToGib);
     for (let i = 0; i < treesToGib; i++) {
       trees.push(
         <Tree key={i} isVisible={true} position={getRandomPosition()} />
@@ -116,7 +114,7 @@ const Forest = ({ userRoadmap }) => {
         ))} */}
           {trees}
         </div>
-        {showOverlay && <Overlay message={messages[randIndex]} />}
+        {showOverlay && <Overlay message={messages[randIndex]} confetti={true} />}
       </div>
     </>
   );
