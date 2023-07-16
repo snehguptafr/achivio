@@ -29,7 +29,7 @@ export default function ShowRoadmaps() {
               userRoadmap: roadmap
             }
           })
-        }}><span class="material-symbols-outlined" id="edit-pen">
+        }}><span className="material-symbols-outlined" id="edit-pen">
         edit
         </span></button>
 
