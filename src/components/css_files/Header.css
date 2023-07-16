@@ -68,4 +68,33 @@ header {
     background-color: #C7E9B0;
 }
 
-/* HEADER DESIGNING ENDS*/
+#focus-onstart {
+    animation: myAnimation 3s ease;
+    animation-iteration-count: 5;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes myAnimation {
+    0% {
+        transform: translateY(0px);
+    }
+
+    25% {
+        transform: translateY(-5px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    75% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+
+}
+
+    /* HEADER DESIGNING ENDS*/
