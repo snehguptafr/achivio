@@ -10,7 +10,7 @@ export default function NotFound(){
 
             <div className="error-message">
                 <h1>Oops! Can't find the page you're looking for :(</h1>
-                <h2>Please recheck the URL uwu</h2>
+                <h2>Please recheck the URL</h2>
             </div>
         </div>
         

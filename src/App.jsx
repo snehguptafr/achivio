@@ -37,7 +37,7 @@ export default function App(){
             <Route path="*" element={<NotFound />} />
 
         </Routes>
-            {illegalSize && <Overlay message={"Whoa, the screen's too small for me to fit in. Please use a device with a big screen UwU"}/>}
+            {illegalSize && <Overlay message={"Whoa, the screen's too small for me to fit in. Please use a device with a big screen"}/>}
         </BrowserRouter>
     )
 }
