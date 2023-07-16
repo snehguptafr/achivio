@@ -78,12 +78,15 @@ export default function CreateRoadmap() {
   function createRoadmap(e) {
     // gets fired on submission of the second form(roadmap name). Creates roadmap nodes and edges(not exactly, calls a different function to do that)
     e.preventDefault();
-    const roadmapName = e.target[0].value; //gets the value of the input field
+    const roadmapName = e.target[0].value.trim(); //gets the value of the input field
     if(userRoadmap){
       localStorage.removeItem(userRoadmap);
     }
-    localStorage.setItem(roadmapName, JSON.stringify(checkpoints)); //sets the roadmap name as key and checkpoints as value in localStorage
-    navigate("/show");
+    if(roadmapName){
+      localStorage.setItem(roadmapName, JSON.stringify(checkpoints)); //sets the roadmap name as key and checkpoints as value in localStorage
+      navigate("/show");
+    }
+    e.target[0].value="";
   }
 
   return (
