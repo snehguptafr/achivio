@@ -7,6 +7,7 @@ import ViewRoadmap from "./pages/ViewRoadmap";
 import ShowRoadmaps from "./pages/ShowRoadmaps";
 import Certificate from "./pages/Certificate";
 import Help from "./pages/Help";
+import NotFound from "./pages/NotFound";
 
 export default function App(){
     const [illegalSize, setIllegalSize] = React.useState(false)
@@ -33,6 +34,7 @@ export default function App(){
             <Route path="/show" element={<ShowRoadmaps />} />
             <Route path='/certificate/:roadMap' element={<Certificate />} />
             <Route path="/getstarted" element={<Help />} />
+            <Route path="*" element={<NotFound />} />
 
         </Routes>
             {illegalSize && <Overlay message={"Whoa, the screen's too small for me to fit in. Please use a device with a big screen UwU"}/>}
