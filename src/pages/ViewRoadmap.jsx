@@ -1,17 +1,17 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import ReactFlow, { Controls, Background } from 'reactflow';
 import Header from "../components/Header";
 import Forest from "../components/Forest";
 import 'reactflow/dist/style.css';
 import './css_files/ViewRoadmap.css';
+import NotFound from "./NotFound";
 
 export default function ViewRoadmap() {
   const { roadMap } = useParams();
   const [initialNodes, setInitialNodes] = React.useState([]); // store flowchart nodes from checkpoints
   const [initialEdges, setInitialEdges] = React.useState([]); //store the path/connection of nodes in the flowchart
-
-  
+  const navigate = useNavigate;  
 
   useEffect(()=>{
     function generateRoadmap(roadmap) {
@@ -47,12 +47,15 @@ export default function ViewRoadmap() {
       setInitialNodes(nodes); //sets the state with nodes for flowchart
       setInitialEdges(edges); //sets the state with edges for flowchart
     }
+  if(localStorage.getItem(roadMap)){
     generateRoadmap(roadMap);
+  }
   }, [roadMap])
 
   return (
     <div className="app">
       <Header />
+      {localStorage.getItem(roadMap) ? <NotFound /> :
       <section id="flow-tree-yes">
         {initialEdges.length>0?(
           <>
@@ -79,7 +82,7 @@ export default function ViewRoadmap() {
           <h1>Loading...</h1>
         )}
 
-      </section>
+      </section>}
     </div>
   );
 }
