@@ -1,21 +1,18 @@
 import React, { useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import ReactFlow, { Controls, Background } from 'reactflow';
+import { useParams } from "react-router-dom";
+import ReactFlow, { Controls, Background } from "reactflow";
 import Header from "../components/Header";
 import Forest from "../components/Forest";
-import 'reactflow/dist/style.css';
-import './css_files/ViewRoadmap.css';
-import NotFound from "./NotFound";
+import "reactflow/dist/style.css";
+import "./css_files/ViewRoadmap.css";
 
 export default function ViewRoadmap() {
   const { roadMap } = useParams();
   const [initialNodes, setInitialNodes] = React.useState([]); // store flowchart nodes from checkpoints
   const [initialEdges, setInitialEdges] = React.useState([]); //store the path/connection of nodes in the flowchart
-  const navigate = useNavigate;  
 
-  useEffect(()=>{
+  useEffect(() => {
     function generateRoadmap(roadmap) {
-      console.log("generator ran")
       //behold! the roadmap nodes and edges generator
       const roadmapNodes = JSON.parse(localStorage.getItem(roadmap)); // gets  the roadmap from localStorage
       const edges = []; // empty array, to be used later to store edges
@@ -34,10 +31,22 @@ export default function ViewRoadmap() {
             x: 100 * (roadmapNodes.indexOf(roadmapNode) % 2),
             y: 150 * roadmapNodes.indexOf(roadmapNode),
           },
-          data: { label: <span style={roadmapNode.isCompleted ? {textDecoration: 'line-through'}: {textDecoration: 'none'}}>{roadmapNode.value}</span> },
+          data: {
+            label: (
+              <span
+                style={
+                  roadmapNode.isCompleted
+                    ? { textDecoration: "line-through" }
+                    : { textDecoration: "none" }
+                }
+              >
+                {roadmapNode.value}
+              </span>
+            ),
+          },
         };
       });
-  
+
       for (let i = 1; i < nodes.length; i++) {
         //setting edges
         const start = nodes[i - 1].id; //denotes start of the edge
@@ -47,42 +56,46 @@ export default function ViewRoadmap() {
       setInitialNodes(nodes); //sets the state with nodes for flowchart
       setInitialEdges(edges); //sets the state with edges for flowchart
     }
-  if(localStorage.getItem(roadMap)){
-    generateRoadmap(roadMap);
-  }
-  }, [roadMap])
+    if (localStorage.getItem(roadMap)) {
+      generateRoadmap(roadMap);
+    }
+  }, [roadMap]);
 
   return (
     <div className="app">
       <Header />
-      {localStorage.getItem(roadMap) ? <NotFound /> :
-      <section id="flow-tree-yes">
-        {initialEdges.length>0?(
-          <>
-          <div id="visible-rm" style={{ width: "500px", height: "80vh" }}>
-            <ReactFlow
-              defaultNodes={initialNodes}
-              defaultEdges={initialEdges}
-              fitView
-              proOptions={{ hideAttribution: true }}
-            >
-              <Controls />
-              <Background variant="dots" gap={30} size={2} />
-            </ReactFlow>
-          </div>
+      {!localStorage.getItem(roadMap) ? (
+        <div className="error-message">
+          <h1>{roadMap} roadmap not found</h1>
+          <h2>Maybe there's a typo in the url</h2>
+        </div>
+      ) : (
+        <section id="flow-tree-yes">
+          {initialEdges.length > 0 ? (
+            <>
+              <div id="visible-rm" style={{ width: "500px", height: "80vh" }}>
+                <ReactFlow
+                  defaultNodes={initialNodes}
+                  defaultEdges={initialEdges}
+                  fitView
+                  proOptions={{ hideAttribution: true }}
+                >
+                  <Controls />
+                  <Background variant="dots" gap={30} size={2} />
+                </ReactFlow>
+              </div>
 
-          <div>
-            <Forest userRoadmap={roadMap} />
-          </div>
+              <div>
+                <Forest userRoadmap={roadMap} />
+              </div>
 
-          {/* <Overlay /> */}
-          </>
-
-        ):(
-          <h1>Loading...</h1>
-        )}
-
-      </section>}
+              {/* <Overlay /> */}
+            </>
+          ) : (
+            <h1>Loading...</h1>
+          )}
+        </section>
+      )}
     </div>
   );
 }
