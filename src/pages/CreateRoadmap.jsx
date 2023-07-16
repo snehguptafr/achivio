@@ -8,7 +8,6 @@ import "./css_files/CreateRoadmap.css";
 export default function CreateRoadmap() {
   // useLocation().state.hasOwnProperty("userRoadmap") && const { userRoadmap } = useLocation().state;
   const location = useLocation();
-  console.log(location)
   const userRoadmap = location.hasOwnProperty("state") ? location.state ? location.state.userRoadmap : false : false;
   const [checkpoints, setCheckpoints] = React.useState(userRoadmap ? JSON.parse(localStorage.getItem(userRoadmap)): []);
   const navigate = useNavigate();
