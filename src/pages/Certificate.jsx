@@ -50,7 +50,7 @@ export default function Certificate() {
           <p>
             on completing your <span id="bold-it">{roadMap}</span> roadmap
           </p>
-          <p>Good job sticking to your goals and achiving them!</p>
+          <p>Good job sticking to your goals and achieving them!</p>
           <img src={Alogo} alt=" " />
         </section>
         <button className="load-but" onClick={getCertificate}>
