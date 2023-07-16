@@ -31,8 +31,8 @@ export default function ViewRoadmap() {
               : "default",
           id: roadmapNode.id,
           position: {
-            x: 50 * (roadmapNodes.indexOf(roadmapNode) % 2),
-            y: 100 * roadmapNodes.indexOf(roadmapNode),
+            x: 100 * (roadmapNodes.indexOf(roadmapNode) % 2),
+            y: 150 * roadmapNodes.indexOf(roadmapNode),
           },
           data: { label: <span style={roadmapNode.isCompleted ? {textDecoration: 'line-through'}: {textDecoration: 'none'}}>{roadmapNode.value}</span> },
         };
