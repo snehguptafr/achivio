@@ -8,6 +8,7 @@ import useWindowSize from "react-use/lib/useWindowSize";
 import Header from "../components/Header";
 
 export default function Certificate() {
+  document.title = "Achivio | Certificate"
   const { roadMap } = useParams();
   const roadmap = localStorage.getItem(roadMap)
     ? JSON.parse(localStorage.getItem(roadMap))

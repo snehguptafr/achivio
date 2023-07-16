@@ -14,6 +14,7 @@ import img10 from '../components/images/help-10.png';
 import img11 from '../components/images/help-11.png';
 
 export default function Help() {
+    document.title = "Achivio | Getting started"
     return (
         <div className="help-main">
             <Header />

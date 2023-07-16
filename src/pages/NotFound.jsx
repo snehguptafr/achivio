@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import "./css_files/NotFound.css"
 
 export default function NotFound(){
-
+    document.title = "Achivio | Page not found"
     return(
         <div className="app">
             <Header />

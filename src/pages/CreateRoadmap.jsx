@@ -6,7 +6,7 @@ import Header from "../components/Header";
 import "./css_files/CreateRoadmap.css";
 
 export default function CreateRoadmap() {
-  // useLocation().state.hasOwnProperty("userRoadmap") && const { userRoadmap } = useLocation().state;
+  document.title = "Achivio | Roadmap"
   const location = useLocation();
   const userRoadmap = location.hasOwnProperty("state") ? location.state ? location.state.userRoadmap : false : false;
   const [checkpoints, setCheckpoints] = React.useState(userRoadmap ? JSON.parse(localStorage.getItem(userRoadmap)): []);

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import ProgressBar from "../components/ProgressBar";
 
 export default function ShowRoadmaps() {
-
+  document.title = "Achivio | Roadmaps"
   const navigate = useNavigate();
 
   const [delCount, setDelCount] = useState(0);

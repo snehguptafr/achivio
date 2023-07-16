@@ -8,6 +8,7 @@ import "./css_files/ViewRoadmap.css";
 
 export default function ViewRoadmap() {
   const { roadMap } = useParams();
+  document.title = `Achivio | ${roadMap}`
   const [initialNodes, setInitialNodes] = React.useState([]); // store flowchart nodes from checkpoints
   const [initialEdges, setInitialEdges] = React.useState([]); //store the path/connection of nodes in the flowchart
 

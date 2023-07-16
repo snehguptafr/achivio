@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 function App() {
     const navigate = useNavigate();
-
+    document.title = "Achivio"
     return (
         <div className='mainDiv'>
 
