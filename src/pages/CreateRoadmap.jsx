@@ -83,7 +83,6 @@ export default function CreateRoadmap() {
       localStorage.removeItem(userRoadmap);
     }
     localStorage.setItem(roadmapName, JSON.stringify(checkpoints)); //sets the roadmap name as key and checkpoints as value in localStorage
-    // generateRoadmap(roadmapName); // this actually generates the nodes and edges
     navigate("/show");
   }
 

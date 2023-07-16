@@ -78,16 +78,6 @@ const Forest = ({ userRoadmap }) => {
     setClearedCheckpoints((prevCount) => prevCount - 1)
   }
 
-  // React.useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setShowOverlay(false);
-  //   }, 5000); // Set the duration in milliseconds (e.g., 5000 = 5 seconds)
-
-  //   return () => {
-  //     clearTimeout(timer);
-  //   };
-  // }, []);
-
   return (
     <>
       <div className="forest">
@@ -109,9 +99,6 @@ const Forest = ({ userRoadmap }) => {
           {clearedCheckpoints > 0 && <button className="contactBtn" onClick={handleUndoCheckpoint}>Undo Checkpoint</button>}
         </div>
         <div className="tree-container">
-          {/* {Array.from({ length: totalTrees }, (v, i) => (
-          <Tree key={i} isVisible={i < clearedCheckpoints} position={getRandomPosition()} />
-        ))} */}
           {trees}
         </div>
         {showOverlay && <Overlay message={messages[randIndex]} confetti={true} />}
