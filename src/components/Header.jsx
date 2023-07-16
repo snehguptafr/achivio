@@ -13,6 +13,8 @@ export default function Header() {
                         window.location.pathname === "/" ? "contactBtn focus-onstart" : "contactBtn"
                     }>How does it work?</button></a>
 
+                    <a href="/show"><button className='contactBtn'>View Roadmaps</button></a>
+
                 <a href="/#ABOUT"><button className='contactBtn'>About</button></a>
 
                 <a href="/#CONTACTINFO"><button className='contactBtn'>Contact</button></a>

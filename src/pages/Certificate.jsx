@@ -40,6 +40,8 @@ export default function Certificate() {
 
   return roadmap ? (
     completed === roadmap.length ? (
+      <div className="app">
+        <Header />
       <div id="parent-certi">
         <Confetti width={width} height={height} />
 
@@ -54,6 +56,8 @@ export default function Certificate() {
         <button className="load-but" onClick={getCertificate}>
           Download Certificate
         </button>
+      </div>
+
       </div>
     ) : (
       <div className="noteli">
